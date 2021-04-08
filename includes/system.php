@@ -116,6 +116,11 @@ function DisplaySystem()
             $status->addMessage("System Shutting Down Now!", "warning", false);
             $result = shell_exec("sudo /sbin/shutdown -h now");
         }
+        if (isset($_POST['reinit_wpa'])) {
+            $status->addMessage("Re-initializing WPA", "warning", false);
+            $result = shell_exec("/sbin/wpa_supplicant -B -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0 -Dnl80211 -Dwext");
+            $status->addMessage($result, 'info');
+        }
     }
 
     if (isset($_POST['RestartLighttpd'])) {

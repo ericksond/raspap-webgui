@@ -36,6 +36,7 @@ include('includes/sysstats.php');
       <form action="system_info" method="POST">
         <?php echo CSRFTokenFieldTag() ?>
         <?php if (!RASPI_MONITOR_ENABLED) : ?>
+            <input type="submit" class="btn btn-warning" name="reinit_wpa"   value="<?php echo _("Re-initialize WPA"); ?>" />
             <input type="submit" class="btn btn-warning" name="system_reboot"   value="<?php echo _("Reboot"); ?>" />
             <input type="submit" class="btn btn-warning" name="system_shutdown" value="<?php echo _("Shutdown"); ?>" />
         <?php endif ?>
