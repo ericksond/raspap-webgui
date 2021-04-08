@@ -118,7 +118,7 @@ function DisplaySystem()
         }
         if (isset($_POST['reinit_wpa'])) {
             $status->addMessage("Re-initializing WPA", "warning", false);
-            $result = shell_exec("/sbin/wpa_supplicant -B -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0 -Dnl80211 -Dwext");
+            $result = shell_exec("sudo /sbin/wpa_supplicant -B -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0 -Dnl80211 -Dwext");
             $status->addMessage($result, 'info');
         }
     }
