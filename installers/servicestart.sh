@@ -9,6 +9,9 @@ CONFIGFILE="/etc/raspap/hostapd.ini"
 DAEMONPATH="/lib/systemd/system/raspapd.service"
 OPENVPNENABLED=$(pidof openvpn | wc -l)
 
+# Re-initialize WPA Supplicant as a Hack
+/sbin/wpa_supplicant -B -Dnl80211,wext -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+
 positional=()
 while [[ $# -gt 0 ]]
 do
