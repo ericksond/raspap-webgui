@@ -37,9 +37,9 @@ $defaults = [
 
   // Optional services, set to true to enable.
   'RASPI_WIFICLIENT_ENABLED' => true,
-  'RASPI_HOTSPOT_ENABLED' => true,
+  'RASPI_HOTSPOT_ENABLED' => false,
   'RASPI_NETWORK_ENABLED' => true,
-  'RASPI_DHCP_ENABLED' => true,
+  'RASPI_DHCP_ENABLED' => false,
   'RASPI_ADBLOCK_ENABLED' => false,
   'RASPI_OPENVPN_ENABLED' => false,
   'RASPI_TORPROXY_ENABLED' => false,

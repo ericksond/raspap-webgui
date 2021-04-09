@@ -10,7 +10,7 @@ DAEMONPATH="/lib/systemd/system/raspapd.service"
 OPENVPNENABLED=$(pidof openvpn | wc -l)
 
 # Re-initialize WPA Supplicant as a Hack
-# /sbin/wpa_supplicant -B -Dnl80211,wext -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
+/sbin/wpa_supplicant -B -Dnl80211,wext -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0
 
 positional=()
 while [[ $# -gt 0 ]]
@@ -109,7 +109,7 @@ fi
 
 # Start services, mitigating race conditions
 echo "Starting network services..."
-systemctl start hostapd.service
+#systemctl start hostapd.service
 sleep "${seconds}"
 
 systemctl start dhcpcd.service
